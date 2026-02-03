@@ -27,10 +27,10 @@
         .blueprint-border { border: 2px solid #111111; }
         .section-line { border-top: 1px solid #e5e7eb; }
         
-        /* --- MAIN CONTAINER LOGIC --- */
+        /* --- MEDIA SIZING RULES --- */
         
-        /* 1. AUTO-WRAP (Use this for your Screenshots) */
-        /* This is the code that FIXED your main image. It wraps tight. */
+        /* 1. SCREENSHOTS (Auto-Height) */
+        /* This wrapper hugs your image tightly. No cropping. No white space. */
         .media-container { 
             width: 100%; 
             position: relative; 
@@ -38,7 +38,7 @@
             border: 1px solid #e5e7eb;
             display: block;
             line-height: 0;
-            background-color: #f4f4f5; /* Grey background so you see it even if image breaks */
+            background-color: #f4f4f5; 
         }
         .media-container img { 
             width: 100%; 
@@ -46,8 +46,8 @@
             display: block;
         }
 
-        /* 2. VIDEO FIX (Use this ONLY for the video) */
-        /* Forces the video player to be 16:9 so it doesn't squash */
+        /* 2. VIDEO (Fixed 16:9) */
+        /* Forces the video player to maintain TV-shape so it doesn't squash */
         .video-wrapper {
             width: 100%;
             aspect-ratio: 16 / 9;
@@ -59,11 +59,12 @@
             object-fit: cover;
         }
 
-        /* 3. PLACEHOLDER FIX */
-        /* Ensures empty boxes have a size so they don't look broken */
+        /* 3. MISSING IMAGE SAFETY */
+        /* Ensures boxes have a size even if you haven't taken the screenshot yet */
         .placeholder-safe {
             min-height: 300px;
             object-fit: cover;
+            width: 100%;
         }
 
         /* ---------------------------- */
@@ -83,14 +84,15 @@
             line-height: normal; 
         }
         
-        .step-number {
+        .category-header {
             font-family: 'IBM Plex Mono';
-            color: #0057FF;
+            font-size: 10px;
             font-weight: bold;
-            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #0057FF;
             margin-bottom: 0.5rem;
             display: block;
-            line-height: normal;
         }
     </style>
 </head>
@@ -118,7 +120,7 @@
     <main class="max-w-5xl mx-auto space-y-32">
         
         <section>
-            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-8 border-b border-black pb-2">00 / Operational Guide</h2>
+            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-8 border-b border-black pb-2">00 / Video Demonstration</h2>
             
             <div class="media-container">
                 <div class="video-wrapper">
@@ -127,121 +129,94 @@
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <div class="fig-tag">Live Demonstration</div>
-            </div>
-            
-            <div class="bg-off-white p-8 border-l-4 border-arch-blue mt-8">
-                <h3 class="text-xl font-bold mb-4">How to Use This Tool</h3>
-                <p class="text-gray-700 leading-relaxed mb-6">
-                    Floorplancreator.net is a browser-based CAD tool. The operational workflow for students is as follows:
-                </p>
-                <ul class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <li>
-                        <span class="step-number">01.</span>
-                        <strong class="block text-sm uppercase tracking-wide mb-1">Drafting</strong>
-                        <p class="text-sm text-gray-600">Select wall elements from the library. Drag them onto the canvas where they "snap" together to form closed rooms.</p>
-                    </li>
-                    <li>
-                        <span class="step-number">02.</span>
-                        <strong class="block text-sm uppercase tracking-wide mb-1">Dimensioning</strong>
-                        <p class="text-sm text-gray-600">Click any wall to reveal the input field. Type exact metric measurements (e.g., 3500mm) to resize to scale.</p>
-                    </li>
-                    <li>
-                        <span class="step-number">03.</span>
-                        <strong class="block text-sm uppercase tracking-wide mb-1">Visualizing</strong>
-                        <p class="text-sm text-gray-600">Press the "3D" button in the toolbar to instantly render the 2D plan into a walkable 3D model for verification.</p>
-                    </li>
-                </ul>
+                <div class="fig-tag">Live Usage Demo</div>
             </div>
         </section>
 
         <section class="section-line pt-20">
-            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-10">01 / Technical Workflow</h2>
+            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-10">01 / The Interface</h2>
             
             <div class="media-container">
                 <img src="image1.png" alt="Software Interface">
-                <div class="fig-tag">Fig 1.1 / Main Interface</div>
+                <div class="fig-tag">Fig 1.1 / Main Workspace</div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
                 <div>
-                    <h4 class="font-bold uppercase text-sm mb-3">The Smart-Snap System</h4>
+                    <span class="category-header">Feature A: Smart Snapping</span>
                     <p class="text-gray-600 leading-relaxed text-sm">
-                        As shown in Fig 1.1, the interface features an intelligent snapping engine. When a student drags a new room shape near an existing wall, the software automatically heals the joints. This removes the frustration of manual trimming found in AutoCAD, allowing Grade 11 students to focus on layout logic rather than line weight.
+                        The workspace shown above features an intelligent "healing" engine. Unlike standard line drawing, walls automatically join when dragged near each other. This allows for rapid prototyping of layouts without manual trimming.
                     </p>
                 </div>
                 <div>
-                    <h4 class="font-bold uppercase text-sm mb-3">Input Rigor & Standards</h4>
+                    <span class="category-header">Feature B: Metric Rigor</span>
                     <p class="text-gray-600 leading-relaxed text-sm">
-                        The tool satisfies <strong>Expectation B1</strong> by requiring precise data entry. Students cannot simply "sketch"; they must input specific dimensions, mirroring the rigor required in architectural technology post-secondary programs.
+                        As seen in the sidebar controls, the tool requires specific metric inputs. This enforces <strong>Expectation B1</strong>, moving students away from artistic sketching and toward engineering-level precision.
                     </p>
                 </div>
             </div>
         </section>
 
         <section class="section-line pt-20">
-            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-10">02 / Feedback Engine</h2>
+            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-10">02 / Visualization Engine</h2>
             
             <div class="media-container">
                 <img class="placeholder-safe" src="image2.png" alt="3D Visualization">
-                <div class="fig-tag">Fig 2.1 / 3D Verification</div>
+                <div class="fig-tag">Fig 2.1 / 3D Mode</div>
             </div>
 
-            <div class="max-w-3xl mt-10">
-                <h3 class="text-3xl font-light mb-6">Instant 3D Visualization</h3>
-                <p class="text-gray-700 leading-relaxed">
-                    The defining pedagogical feature is the ability to toggle between abstract 2D plans and concrete 3D views. This allows for immediate <strong>Ergonomic Verification</strong>. A student can place a window in 2D, switch to 3D, and immediately see if the sightlines are blocked, fulfilling <strong>Expectation A1</strong> (testing and refining solutions).
+            <div class="mt-8">
+                <span class="category-header">Verification Loop</span>
+                <p class="text-gray-700 leading-relaxed max-w-3xl">
+                    The software allows instant toggling between the 2D plan (above) and this 3D view. This creates a feedback loop where students can immediately test the "livability" of their design, satisfying <strong>Expectation A1</strong> (Solution Testing).
                 </p>
             </div>
         </section>
 
         <section class="section-line pt-20 pb-20">
-            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-16">03 / Implementation Contexts</h2>
+            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-16">03 / Proof of Learning</h2>
             
-            <div class="space-y-24">
+            <div class="space-y-20">
                 
-                <div class="space-y-6">
-                    <div class="flex items-center justify-between border-b border-gray-200 pb-3">
-                        <h4 class="font-bold uppercase text-lg">Scenario A: The Tiny Home Challenge</h4>
-                        <span class="font-mono text-[10px] bg-arch-blue text-white px-2 py-1 uppercase">Math Integration</span>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold uppercase text-lg">Scenario A: Math & Area</h4>
+                        <span class="text-[10px] font-mono bg-arch-blue text-white px-2 py-1">Tiny Home Unit</span>
                     </div>
                     <div class="media-container">
-                        <img class="placeholder-safe" src="image3.png" alt="Math Evidence">
-                        <div class="fig-tag">Fig 3.1 / Area Calc</div>
+                        <img class="placeholder-safe" src="image3.png" alt="Area Calculation Evidence">
+                        <div class="fig-tag">Fig 3.1 / Area Data</div>
                     </div>
-                    <p class="text-gray-700 leading-relaxed">
-                        <strong>Context:</strong> Students must design a home under 37m².<br>
-                        <strong>Application:</strong> The software's "Live Area Calculation" feature (Fig 3.1) updates the square footage in real-time as walls are moved. This provides mathematical scaffolding, forcing students to negotiate between aesthetic desires and strict numerical constraints.
+                    <p class="text-gray-600 text-sm mt-4">
+                        <strong>Evidence:</strong> The screenshot captures the "Live Area" tool. Students must keep the design under 37m², using this real-time data to make critical layout decisions.
                     </p>
                 </div>
 
-                <div class="space-y-6">
-                    <div class="flex items-center justify-between border-b border-gray-200 pb-3">
-                        <h4 class="font-bold uppercase text-lg">Scenario B: AODA Retrofit</h4>
-                        <span class="font-mono text-[10px] bg-black text-white px-2 py-1 uppercase">Accessibility</span>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold uppercase text-lg">Scenario B: Accessibility (AODA)</h4>
+                        <span class="text-[10px] font-mono bg-black text-white px-2 py-1">Code Compliance</span>
                     </div>
                     <div class="media-container">
                         <img class="placeholder-safe" src="image4.png" alt="AODA Evidence">
-                        <div class="fig-tag">Fig 3.2 / Compliance</div>
+                        <div class="fig-tag">Fig 3.2 / Turning Radius</div>
                     </div>
-                    <p class="text-gray-700 leading-relaxed">
-                        <strong>Context:</strong> Renovating a bathroom for wheelchair accessibility.<br>
-                        <strong>Application:</strong> Students verify a 1500mm turning radius using the circle tool. The 3D walkthrough feature is then used to simulate the user experience, building empathy and ensuring compliance with Ontario's AODA standards.
+                    <p class="text-gray-600 text-sm mt-4">
+                        <strong>Evidence:</strong> The image shows a 1500mm turning radius circle overlaid on a bathroom plan. This proves compliance with Ontario AODA standards for wheelchair accessibility.
                     </p>
                 </div>
 
-                <div class="space-y-6">
-                    <div class="flex items-center justify-between border-b border-gray-200 pb-3">
-                        <h4 class="font-bold uppercase text-lg">Scenario C: Collaborative BIM</h4>
-                        <span class="font-mono text-[10px] bg-gray-500 text-white px-2 py-1 uppercase">Industry Prep</span>
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="font-bold uppercase text-lg">Scenario C: Collaboration</h4>
+                        <span class="text-[10px] font-mono bg-gray-500 text-white px-2 py-1">BIM Intro</span>
                     </div>
                     <div class="media-container">
-                        <img class="placeholder-safe" src="image5.png" alt="BIM Evidence">
-                        <div class="fig-tag">Fig 3.3 / Collaboration</div>
+                        <img class="placeholder-safe" src="image5.png" alt="Sharing Evidence">
+                        <div class="fig-tag">Fig 3.3 / Project Sharing</div>
                     </div>
-                    <p class="text-gray-700 leading-relaxed">
-                        <strong>Context:</strong> A group design project for a community centre.<br>
-                        <strong>Application:</strong> Leveraging the cloud-based nature of the tool, students share project files via URL links. This mimics <strong>Building Information Modeling (BIM)</strong> used in industry, where multiple stakeholders review a "living" digital model.
+                    <p class="text-gray-600 text-sm mt-4">
+                        <strong>Evidence:</strong> This shows the cloud-sharing interface. Students generate a link to share their "living model" with peers, mimicking industry BIM workflows.
                     </p>
                 </div>
 
