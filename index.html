@@ -3,144 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Tool Portfolio | Floorplancreator.net</title>
+    <title>TDJ3M Portfolio | Digital Tool Integration</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Oswald', 'sans-serif'] },
-                    colors: { 'neon-blue': '#4facfe', 'neon-purple': '#00f2fe', 'dark-bg': '#0f172a', 'card-bg': '#1e293b' },
-                    animation: { blob: "blob 7s infinite" },
-                    keyframes: {
-                        blob: {
-                            "0%": { transform: "translate(0px, 0px) scale(1)" },
-                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
-                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
-                            "100%": { transform: "translate(0px, 0px) scale(1)" },
-                        },
+                    fontFamily: { 
+                        sans: ['Outfit', 'sans-serif'], 
+                        serif: ['Playfair Display', 'serif'] 
                     },
+                    colors: { 
+                        'arch-blue': '#0057FF', // Blueprint Blue
+                        'arch-gray': '#F8F9FA',
+                        'arch-dark': '#1A1A1A'
+                    }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #0f172a; color: #e2e8f0; }
-        .gradient-text { background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(79, 172, 254, 0.3); border-color: #4facfe; }
+        body { background-color: white; color: #1A1A1A; line-height: 1.6; }
+        .blueprint-grid {
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        /* Removed the "lighting up" hover effect - boxes remain static */
+        .content-box { border: 1px solid #E5E7EB; transition: none; }
+        .section-title { border-bottom: 2px solid #1A1A1A; display: inline-block; padding-bottom: 4px; margin-bottom: 2rem; }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="fixed w-full z-50 bg-dark-bg/90 backdrop-blur-sm border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <span class="font-display text-2xl tracking-wider text-white uppercase">Design<span class="text-blue-400">Toolkit</span></span>
-            <div class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="#overview" class="hover:text-blue-400 transition">Tool Overview</a>
-                <a href="#pedagogy" class="hover:text-blue-400 transition">Pedagogy</a>
-                <a href="#scenarios" class="hover:text-blue-400 transition">Classroom Scenarios</a>
+    <nav class="w-full border-b border-gray-200 py-6 sticky top-0 bg-white/90 backdrop-blur-md z-50">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <div class="font-serif text-2xl font-bold tracking-tight">Portfolio.<span class="text-arch-blue">01</span></div>
+            <div class="space-x-8 text-xs font-bold uppercase tracking-widest text-gray-500">
+                <a href="#tool" class="hover:text-arch-blue">The Tool</a>
+                <a href="#rationale" class="hover:text-arch-blue">Rationale</a>
+                <a href="#scenarios" class="hover:text-arch-blue">Integration</a>
             </div>
         </div>
     </nav>
 
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-20 z-0">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600 rounded-full blur-3xl animate-blob"></div>
-            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-600 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
-        </div>
-        <div class="relative z-10 text-center px-4 max-w-4xl">
-            <h1 class="font-display text-5xl md:text-7xl font-bold mb-6 tracking-tight uppercase">
-                Bridging the <br> <span class="gradient-text">Design Gap</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-10 font-light">
-                Digital Tool Portfolio: Floorplancreator.net in TDJ3M
+    <header class="py-24 blueprint-grid border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-arch-blue font-bold uppercase tracking-[0.3em] text-sm mb-4">Grade 11 Technological Design (TDJ3M)</p>
+            <h1 class="font-serif text-6xl md:text-8xl mb-8 max-w-4xl">Bridging the Design Gap.</h1>
+            <p class="text-xl text-gray-500 max-w-2xl font-light">
+                An analysis of <span class="text-arch-dark font-normal italic">Floorplancreator.net</span> as a feedback engine for the modern CAD classroom.
             </p>
-            <a href="#overview" class="px-8 py-3 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-bold hover:scale-105 transition transform inline-block">
-                View Detailed Analysis
-            </a>
+        </div>
+    </header>
+
+    <section id="tool" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title text-sm uppercase tracking-widest font-bold">01. Tool Functionality</h2>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-5">
+                    <p class="text-2xl font-light mb-6">
+                        Floorplancreator.net is a "lightweight" CAD suite that simplifies the technical barriers of architectural drawing.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        The browser-based interface allows for seamless transitions between school Chromebooks and home mobile devices, supporting a flexible BYOD (Bring Your Own Device) learning environment.
+                    </p>
+                </div>
+                <div class="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="content-box p-8 bg-arch-gray">
+                        <h4 class="font-bold mb-2 uppercase text-xs tracking-wider">Smart-Snap Interface</h4>
+                        <p class="text-sm text-gray-500 italic">Automated wall joints and exact dimension inputs for professional-grade scalability.</p>
+                    </div>
+                    <div class="content-box p-8 bg-arch-gray">
+                        <h4 class="font-bold mb-2 uppercase text-xs tracking-wider">Instant 3D Visualization</h4>
+                        <p class="text-sm text-gray-500 italic">One-click 2D-to-3D transformation to immediately verify ergonomics and sightlines.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="overview" class="py-20 bg-gray-900">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="border-l-4 border-blue-500 pl-6 mb-12">
-                <h2 class="font-display text-3xl font-bold text-white mb-4 uppercase">The Tool: A "Lightweight" CAD Suite</h2>
-                <p class="text-lg text-gray-300 leading-relaxed">
-                    Floorplancreator.net is a cloud-based CAD tool that effectively bridges the gap between rough hand-sketching and heavy industrial software like AutoCAD[cite: 187]. It is built for <strong>BYOD (Bring Your Own Device)</strong> environments, allowing students to start projects on Chromebooks and finish them on mobile phones[cite: 188].
-                </p>
+    <section id="rationale" class="py-20 bg-arch-dark text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-arch-blue text-sm uppercase tracking-widest font-bold mb-8">02. Pedagogical Rationale</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-4xl font-serif mb-6">Overcoming Creation Fatigue.</h3>
+                    <p class="text-gray-400 text-lg font-light leading-relaxed">
+                        Traditional drafting often penalizes mistakes because re-drawing takes hours. This tool allows students to <strong>fail fast and iterate quickly</strong>. By removing mechanical friction, students shift their cognitive load from merely drawing lines to solving complex design problems.
+                    </p>
+                </div>
+                <div class="border border-gray-700 p-8 flex flex-col justify-between">
+                    <div>
+                        <p class="text-xs uppercase tracking-[0.2em] text-arch-blue font-bold mb-4">Curriculum Alignment</p>
+                        <ul class="space-y-4 text-sm font-light text-gray-300">
+                            <li><span class="text-white font-bold">Expectation A1:</span> Developing and evaluating solutions through rapid prototyping.</li>
+                            <li><span class="text-white font-bold">Expectation B1:</span> Mastering technical concepts and standard architectural symbols.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-gray-800">
+                        <p class="text-sm italic text-gray-500">"This tool functions as a feedback engine, not just a drawing app."</p>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section id="scenarios" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title text-sm uppercase tracking-widest font-bold">03. Integration Scenarios</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-card-bg p-8 rounded-xl border border-gray-700 card-hover">
-                    <i class="fa-solid fa-wand-magic-sparkles text-blue-400 text-3xl mb-4"></i>
-                    <h3 class="text-white font-bold text-xl mb-2">Smart-Snap System</h3>
-                    <p class="text-gray-400 text-sm">Drag-and-drop walls and windows with automatic alignment and joint healing. Supports exact metric and imperial dimensions for scalable technical drawings[cite: 191].</p>
+            <div class="space-y-12">
+                <div class="flex flex-col md:flex-row gap-12 border-b border-gray-100 pb-12">
+                    <div class="md:w-1/3">
+                        <h3 class="font-serif text-2xl">The Tiny Home Challenge</h3>
+                        <p class="text-arch-blue text-xs font-bold uppercase mt-2">Math Integration</p>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-gray-600 mb-4">
+                            Students must design a home under 37m². The <strong>Live Area Calculation</strong> updates in real-time as walls are dragged, providing immediate scaffolding for spatial budgeting without constant teacher intervention.
+                        </p>
+                        <div class="h-48 bg-gray-100 flex items-center justify-center text-gray-400 text-xs uppercase tracking-widest">
+                            [Insert Screenshot: Live Area Feedback Example]
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-card-bg p-8 rounded-xl border border-gray-700 card-hover">
-                    <i class="fa-solid fa-cube text-purple-400 text-3xl mb-4"></i>
-                    <h3 class="text-white font-bold text-xl mb-2">Instant 3D Visualization</h3>
-                    <p class="text-gray-400 text-sm">One-click transformation from 2D blueprint to a navigable 3D model, allowing students to verify sightlines and ergonomics instantly.</p>
+
+                <div class="flex flex-col md:flex-row gap-12 border-b border-gray-100 pb-12">
+                    <div class="md:w-1/3">
+                        <h3 class="font-serif text-2xl">Accessibility Retrofit</h3>
+                        <p class="text-arch-blue text-xs font-bold uppercase mt-2">AODA Standards</p>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-gray-600 mb-4">
+                            Students trace old JPEG layouts and renovate them to meet the 1500mm wheelchair turning radius. The <strong>3D Walkthrough</strong> mode allows them to experience the maneuverability of their design firsthand.
+                        </p>
+                        <div class="h-48 bg-gray-100 flex items-center justify-center text-gray-400 text-xs uppercase tracking-widest">
+                            [Insert Screenshot: Accessibility Compliance View]
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/3">
+                        <h3 class="font-serif text-2xl">Collaborative BIM</h3>
+                        <p class="text-arch-blue text-xs font-bold uppercase mt-2">Industry Workflow</p>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-gray-600 mb-4">
+                            Using <strong>Project Sharing</strong>, students work simultaneously on one file—one student optimizes the kitchen triangle while another handles the living zones, mimicking modern Building Information Modeling (BIM).
+                        </p>
+                        <div class="h-48 bg-gray-100 flex items-center justify-center text-gray-400 text-xs uppercase tracking-widest">
+                            [Insert Screenshot: Multi-User Collaboration Icons]
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="pedagogy" class="py-20 bg-dark-bg">
-        <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="space-y-6">
-                <h2 class="font-display text-4xl font-bold text-white uppercase">Pedagogical Rationale</h2>
-                <p class="text-gray-300">
-                    This tool combats <strong>"Creation Fatigue"</strong> by removing the mechanical barrier of re-drawing layouts by hand[cite: 193, 194]. It shifts the cognitive load from drawing lines to solving design problems[cite: 198].
-                </p>
-                <div class="p-4 bg-blue-900/20 border-l-2 border-blue-400 rounded">
-                    <p class="text-sm text-blue-400 font-mono">ONTARIO CURRICULUM ALIGNMENT</p>
-                    <ul class="text-gray-300 text-sm mt-2 space-y-2">
-                        <li><strong>Expectation A1:</strong> Develop and evaluate solutions via rapid prototyping[cite: 195, 196].</li>
-                        <li><strong>Expectation B1:</strong> Mastering technical concepts and standard architectural symbols[cite: 199, 200].</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="bg-card-bg p-8 rounded-2xl border border-gray-800 flex items-center justify-center">
-                <div class="text-center">
-                    <i class="fa-solid fa-microchip text-6xl text-blue-500/30 mb-4"></i>
-                    <p class="text-gray-400 italic">"Floorplancreator.net is not just a drawing app; it is a feedback engine." [cite: 213]</p>
-                </div>
-            </div>
+    <footer class="bg-arch-gray py-12 border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-6 text-center text-gray-400 text-xs uppercase tracking-widest">
+            <p>&copy; 2026 TDJ3M Digital Tool Portfolio | Individual Component</p>
         </div>
-    </section>
-
-    <section id="scenarios" class="py-20 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="font-display text-3xl font-bold text-white mb-12 text-center uppercase">Classroom Applications</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-card-bg rounded-xl p-8 border border-gray-700 card-hover">
-                    <h3 class="text-blue-400 font-bold mb-4">A: Tiny Home Challenge</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Uses <strong>Live Area Calculation</strong> to teach spatial budgeting. As students drag walls, square footage updates in real-time, providing immediate scaffolding for math integration[cite: 202, 203, 204].
-                    </p>
-                </div>
-                <div class="bg-card-bg rounded-xl p-8 border border-gray-700 card-hover">
-                    <h3 class="text-purple-400 font-bold mb-4">B: Accessibility Retrofit</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Students renovate JPEG floor plans to meet <strong>AODA standards</strong>. They use 3D walkthroughs to test wheelchair maneuverability and user experience[cite: 206, 207, 208].
-                    </p>
-                </div>
-                <div class="bg-card-bg rounded-xl p-8 border border-gray-700 card-hover">
-                    <h3 class="text-cyan-400 font-bold mb-4">C: Collaborative Planning</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Mimics industry <strong>BIM (Building Information Modeling)</strong>. Groups use "Project Sharing" to work on one master file simultaneously[cite: 209, 210, 212].
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-8 bg-black text-center text-gray-600 text-xs">
-        <p>&copy; 2026 Group Digital Tool Portfolio | Technological Design TDJ3M</p>
     </footer>
 
 </body>
