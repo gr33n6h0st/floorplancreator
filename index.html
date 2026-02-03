@@ -119,57 +119,59 @@
 
     <main class="max-w-5xl mx-auto space-y-32">
         
-      <section class="mb-20 border-b-2 border-black pb-12">
+     <section class="mb-20 border-b-2 border-black pb-12">
             <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-8 border-b border-black pb-2">00 / Operational Workflow</h2>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                
-                <div class="relative">
-                    <div class="bg-black text-white text-xs font-mono py-1 px-2 absolute top-0 left-0 z-10">
-                        RAW FOOTAGE: 1:07
-                    </div>
-                    <div class="media-container shadow-xl">
-                        <video class="w-full h-auto" controls>
-                            <source src="demo-video.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="fig-tag">Video: End-to-End Workflow</div>
-                    </div>
-                    <p class="text-[10px] text-gray-500 mt-2 font-mono text-center">
-                        *No audio recorded to focus on technical workflow
-                    </p>
+            <div class="relative mb-10">
+                <div class="bg-black text-white text-xs font-mono py-1 px-2 absolute top-0 left-0 z-10">
+                    RAW FOOTAGE: 1:07
+                </div>
+                <div class="media-container shadow-xl">
+                    <iframe 
+                        class="w-full aspect-video border border-black" 
+                        src="https://www.youtube.com/embed/gADOeHTT_WM?si=fxkj36biQFtqMm07" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                    <div class="fig-tag">Video: End-to-End Workflow</div>
+                </div>
+                <p class="text-[10px] text-gray-500 mt-2 font-mono text-center">
+                    *No audio recorded to focus on technical workflow
+                </p>
+            </div>
+
+            <div>
+                <div class="border-b border-black pb-2 mb-6">
+                    <h3 class="font-bold uppercase text-xl">Technical Demonstration</h3>
+                    <span class="text-[10px] font-mono bg-red-600 text-white px-2 py-1">Real-time Execution</span>
                 </div>
 
-                <div>
-                    <div class="border-b border-black pb-2 mb-6">
-                        <h3 class="font-bold uppercase text-xl">Technical Demonstration</h3>
-                        <span class="text-[10px] font-mono bg-red-600 text-white px-2 py-1">Real-time Execution</span>
-                    </div>
-
-                    <ul class="space-y-6 text-sm text-gray-600">
-                        <li class="flex gap-4">
-                            <span class="font-mono font-bold text-black min-w-[70px] pt-1">0:00-0:31</span>
-                            <div>
-                                <strong class="block text-black mb-1">Phase 1: Structure & Precision</strong>
-                                The designer establishes the footprint, connecting the primary room to a secondary zone. Garage doors are installed and resized, demonstrating the ability to manipulate structural openings to specific dimensions.
-                            </div>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="font-mono font-bold text-black min-w-[70px] pt-1">0:31-0:53</span>
-                            <div>
-                                <strong class="block text-black mb-1">Phase 2: Scale & Fit-Out</strong>
-                                Vehicles (car/motorcycle) and furniture are inserted to test the floor area. The structure is resized in real-time to ensure the garage and living zones can physically accommodate their intended contents (Spatial Programming).
-                            </div>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="font-mono font-bold text-black min-w-[70px] pt-1">0:53-End</span>
-                            <div>
-                                <strong class="block text-black mb-1">Phase 3: 3D Visualization</strong>
-                                The workflow switches to a 3D walkthrough. This verifies vertical clearances and sightlines, ensuring the design works as a cohesive, navigable volume rather than just a 2D drawing.
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-600">
+                    <li class="border-l-2 border-gray-200 pl-4">
+                        <span class="font-mono font-bold text-black block mb-2">0:00-0:31</span>
+                        <div>
+                            <strong class="block text-black mb-1">Phase 1: Structure & Precision</strong>
+                            The designer establishes the footprint, connecting the primary room to a secondary zone. Garage doors are installed and resized, demonstrating the ability to manipulate structural openings.
+                        </div>
+                    </li>
+                    <li class="border-l-2 border-gray-200 pl-4">
+                        <span class="font-mono font-bold text-black block mb-2">0:31-0:53</span>
+                        <div>
+                            <strong class="block text-black mb-1">Phase 2: Scale & Fit-Out</strong>
+                            Vehicles and furniture are inserted to test the floor area. The structure is resized in real-time to ensure the garage and living zones can physically accommodate their intended contents.
+                        </div>
+                    </li>
+                    <li class="border-l-2 border-gray-200 pl-4">
+                        <span class="font-mono font-bold text-black block mb-2">0:53-End</span>
+                        <div>
+                            <strong class="block text-black mb-1">Phase 3: 3D Visualization</strong>
+                            The workflow switches to a 3D walkthrough. This verifies vertical clearances and sightlines, ensuring the design works as a cohesive, navigable volume.
+                        </div>
+                    </li>
+                </ul>
             </div>
         </section>
         <section class="section-line pt-20">
@@ -302,6 +304,7 @@
 
 </body>
 </html>
+
 
 
 
