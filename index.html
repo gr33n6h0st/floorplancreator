@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TDJ3M Digital Tool Portfolio | Brandon Smart</title>
+    <title>TDJ3M Portfolio Component | Brandon Smart</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -15,104 +15,131 @@
                         sans: ['Outfit', 'sans-serif'], 
                         mono: ['IBM Plex Mono', 'monospace'] 
                     },
-                    colors: { 'arch-blue': '#0057FF', 'arch-line': '#E5E7EB' }
+                    colors: { 'blueprint-blue': '#0057FF' }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #FFFFFF; color: #111111; }
-        .border-fine { border: 1px solid #E5E7EB; }
-        .blueprint-bg {
-            background-image: radial-gradient(#d1d5db 0.5px, transparent 0.5px);
-            background-size: 24px 24px;
-        }
-        section { border-bottom: 1px solid #E5E7EB; }
+        body { background-color: #f9fafb; color: #111111; }
+        .sheet-border { border: 2px solid #111111; background: white; }
+        .image-well { background-color: #f3f4f6; border: 1px solid #e5e7eb; position: relative; width: 100%; overflow: hidden; }
+        .fig-label { position: absolute; bottom: 0; right: 0; background: #111; color: #fff; padding: 4px 10px; font-family: 'IBM Plex Mono'; font-size: 10px; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased p-6 md:p-16">
 
-    <header class="max-w-6xl mx-auto mt-12 px-6 pb-12 border-b border-fine">
-        <div class="flex flex-col md:flex-row justify-between items-end gap-6">
-            <div>
-                <p class="text-arch-blue font-mono text-xs font-bold tracking-widest uppercase mb-2">Individual Component</p>
-                <h1 class="text-5xl font-light tracking-tight">Floorplancreator.net</h1>
-                <p class="text-sm text-gray-500 mt-2 font-mono uppercase">Course Code: TDJ3M (Ontario Curriculum)</p>
+    <header class="max-w-6xl mx-auto sheet-border p-10 mb-20 shadow-sm">
+        <div class="flex flex-col md:flex-row justify-between items-start gap-10">
+            <div class="flex-1">
+                <p class="text-blueprint-blue font-mono text-xs font-bold tracking-[0.4em] uppercase mb-3">Technical Portfolio Section .01</p>
+                <h1 class="text-5xl font-light tracking-tighter mb-4">Floorplancreator.net</h1>
+                <p class="text-xl text-gray-500 font-light italic">CAD Integration Analysis: The Feedback Engine</p>
             </div>
-            <div class="text-right border-l border-fine pl-6">
-                <p class="text-xs font-mono uppercase text-gray-400">Student</p>
-                <p class="text-lg font-medium underline decoration-arch-blue decoration-2 underline-offset-4">Brandon Smart</p>
+            <div class="w-full md:w-72 border-t-2 md:border-t-0 md:border-l-2 border-black pt-6 md:pt-0 md:pl-10">
+                <div class="space-y-6">
+                    <div>
+                        <p class="text-[10px] font-mono uppercase text-gray-400">Designer</p>
+                        <p class="text-2xl font-bold uppercase tracking-tight">Brandon Smart</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-mono uppercase text-gray-400">Course Code</p>
+                        <p class="text-sm font-medium">TDJ3M (Grade 11 Tech Design)</p>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-6 py-12">
+    <main class="max-w-6xl mx-auto space-y-32">
         
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-16 py-16">
-            <div>
-                <span class="text-xs font-mono text-gray-400">01 / TOOL FUNCTIONALITY</span>
-                <h2 class="text-3xl font-light mt-4 mb-6">Usability and Precision</h2>
-                <p class="text-gray-600 mb-8 leading-relaxed">
-                    Floorplancreator.net is a cloud-based CAD suite that bridges the gap between hand-sketching and heavy industrial software. The <strong>Smart-Snap</strong> system (Fig 1.1) heals wall joints automatically, while <strong>Instant 3D</strong> (Fig 1.2) allows for immediate ergonomic verification.
-                </p>
-                
-                <div class="border-fine p-2 bg-gray-50">
-                    <div class="bg-white border-fine h-32 flex items-center justify-center text-[10px] text-gray-400 uppercase p-4 text-center">
-                        [IMAGE 1: Zoomed-in screenshot of the software's TOOLBAR icons]
-                    </div>
-                    <p class="text-[9px] font-mono mt-2 text-center uppercase">Fig 1.1 — Interaction Nodes</p>
+        <section>
+            <div class="flex flex-col md:flex-row gap-12 items-start mb-10">
+                <div class="md:w-1/3">
+                    <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-blueprint-blue border-b border-black pb-2 mb-4">01 / Tool Functionality</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        Floorplancreator.net is a "lightweight" CAD suite designed for rapid architectural drafting. Its <strong>Smart-Snap</strong> interface allows for professional-grade scalability, enabling students to focus on design logic rather than software barriers.
+                    </p>
                 </div>
-            </div>
-
-            <div class="blueprint-bg p-4 flex flex-col justify-center">
-                <div class="bg-white border-fine p-6 shadow-sm">
-                    <div class="aspect-video bg-gray-100 flex items-center justify-center text-[10px] text-gray-400 p-8 text-center">
-                        [IMAGE 2: 3D Walkthrough View - Interior Perspective]
+                <div class="md:w-2/3">
+                    <div class="image-well aspect-[16/9] flex flex-col items-center justify-center">
+                        <span class="text-gray-400 font-mono text-xs uppercase tracking-widest">[Image 1: Full Software Interface & Main Toolbar]</span>
+                        <div class="fig-label">FIG 1.1 / INTERFACE NODES</div>
                     </div>
-                    <p class="text-[9px] font-mono mt-4 text-center uppercase">Fig 1.2 — 3D Spatial Verification</p>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 grid grid-cols-1 md:grid-cols-12 gap-12">
-            <div class="md:col-span-4">
-                <span class="text-xs font-mono text-gray-400">02 / RATIONALE</span>
-                <h2 class="text-3xl font-light mt-4 mb-6">Cognitive Shift</h2>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    By removing the mechanical friction of drafting, students focus on solving design problems rather than drawing lines. This aligns with <strong>Curriculum Expectation A1</strong> for rapid prototyping.
+        <section>
+            <div class="flex flex-col md:flex-row gap-12 items-start mb-10">
+                <div class="md:w-1/3 order-1 md:order-2">
+                    <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-blueprint-blue border-b border-black pb-2 mb-4">02 / Immersive Verification</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        The <strong>Instant 3D Visualization</strong> mode allows students to move from 2D blueprints to a first-person perspective walkthrough. This immediate feedback loop is essential for verifying interior ergonomics and user sightlines.
+                    </p>
+                </div>
+                <div class="md:w-2/3 order-2 md:order-1">
+                    <div class="image-well aspect-[16/9] flex flex-col items-center justify-center">
+                        <span class="text-gray-400 font-mono text-xs uppercase tracking-widest">[Image 2: First-Person 3D Interior Perspective]</span>
+                        <div class="fig-label">FIG 2.1 / 3D SPATIAL DATA</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pt-16 border-t border-gray-200">
+            <div class="max-w-3xl mb-16">
+                <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-blueprint-blue mb-4">03 / Pedagogical Rationale</h2>
+                <p class="text-2xl font-light text-gray-500 italic leading-relaxed">
+                    By eliminating <strong>"Creation Fatigue,"</strong> students shift their cognitive load to <strong>Ontario Curriculum Expectation A1</strong>: developing and evaluating design solutions through rapid prototyping.
                 </p>
             </div>
-            
-            <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="border-fine p-4">
-                    <h3 class="text-xs font-bold uppercase mb-4">Tiny Home (Math)</h3>
-                    <div class="h-32 bg-gray-50 border-fine mb-3 flex items-center justify-center text-[9px] text-gray-400 p-2 text-center">
-                        [IMAGE 3: 2D Floor Plan with AREA LABELS visible]
+
+            <div class="space-y-24">
+                
+                <div class="space-y-6">
+                    <div class="flex justify-between items-baseline border-b border-gray-100 pb-2">
+                        <h3 class="text-xl font-bold uppercase tracking-tighter">Scenario A: Tiny Home Challenge</h3>
+                        <span class="text-[10px] font-mono text-gray-400 uppercase">Focus: Math Integration / Spatial Budgeting</span>
                     </div>
-                    <p class="text-[10px] text-gray-500">Managing spatial budgets under 37m² via Live Area data.</p>
+                    <div class="image-well aspect-[21/9] flex flex-col items-center justify-center">
+                        <span class="text-gray-400 font-mono text-xs uppercase tracking-widest">[Image 3: 2D Floor Plan with Room Area Labels Visible]</span>
+                        <div class="fig-label">FIG 3.1 / LIVE AREA CALCULATIONS</div>
+                    </div>
+                    <p class="text-sm text-gray-600 max-w-4xl">Students manage a strict 37m² constraint. As walls are positioned, the software provides real-time area data, acting as a mathematical scaffold for the student.</p>
                 </div>
 
-                <div class="border-fine p-4">
-                    <h3 class="text-xs font-bold uppercase mb-4">Accessibility (AODA)</h3>
-                    <div class="h-32 bg-gray-50 border-fine mb-3 flex items-center justify-center text-[9px] text-gray-400 p-2 text-center">
-                        [IMAGE 4: 2D Plan showing 1500mm MEASUREMENT LINES]
+                <div class="space-y-6">
+                    <div class="flex justify-between items-baseline border-b border-gray-100 pb-2">
+                        <h3 class="text-xl font-bold uppercase tracking-tighter">Scenario B: Accessibility Retrofit</h3>
+                        <span class="text-[10px] font-mono text-gray-400 uppercase">Focus: Social Justice / AODA Standards</span>
                     </div>
-                    <p class="text-[10px] text-gray-500">Tracing JPEGs to verify wheelchair turning radii compliance.</p>
+                    <div class="image-well aspect-[21/9] flex flex-col items-center justify-center">
+                        <span class="text-gray-400 font-mono text-xs uppercase tracking-widest">[Image 4: Top-Down Plan with 1500mm Measurement Lines]</span>
+                        <div class="fig-label">FIG 3.2 / COMPLIANCE MEASUREMENT</div>
+                    </div>
+                    <p class="text-sm text-gray-600 max-w-4xl">Renovating existing layouts to ensure a 1500mm wheelchair turning radius, moving assessment from technical drawing to human-centric design.</p>
                 </div>
 
-                <div class="border-fine p-4">
-                    <h3 class="text-xs font-bold uppercase mb-4">BIM (Workflows)</h3>
-                    <div class="h-32 bg-gray-50 border-fine mb-3 flex items-center justify-center text-[9px] text-gray-400 p-2 text-center">
-                        [IMAGE 5: Screenshot of 'SHARE' menu or PROJECT LIST]
+                <div class="space-y-6">
+                    <div class="flex justify-between items-baseline border-b border-gray-100 pb-2">
+                        <h3 class="text-xl font-bold uppercase tracking-tighter">Scenario C: Collaborative BIM</h3>
+                        <span class="text-[10px] font-mono text-gray-400 uppercase">Focus: Industry Workflow / Cloud Access</span>
                     </div>
-                    <p class="text-[10px] text-gray-500">Cloud-based project sharing for group zone optimization.</p>
+                    <div class="image-well aspect-[21/9] flex flex-col items-center justify-center">
+                        <span class="text-gray-400 font-mono text-xs uppercase tracking-widest">[Image 5: Software Dashboard / Project Sharing Menu]</span>
+                        <div class="fig-label">FIG 3.3 / MULTI-USER WORKFLOW</div>
+                    </div>
+                    <p class="text-sm text-gray-600 max-w-4xl">Mimics modern Building Information Modeling (BIM) by allowing multiple students to optimize a single master project file simultaneously.</p>
                 </div>
+
             </div>
         </section>
     </main>
 
-    <footer class="py-12 text-center">
-        <p class="text-[10px] font-mono text-gray-400 uppercase tracking-widest">Brandon Smart // Portfolio .01 // 2026</p>
+    <footer class="max-w-6xl mx-auto mt-32 py-10 border-t border-black flex justify-between items-center text-[10px] font-mono text-gray-400 uppercase tracking-widest">
+        <p>Brandon Smart Portfolio // 2026</p>
+        <p>Digital Tool Integration: TDJ3M</p>
     </footer>
 
 </body>
