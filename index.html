@@ -10,10 +10,7 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { 
-                        sans: ['Outfit', 'sans-serif'], 
-                        mono: ['IBM Plex Mono', 'monospace'] 
-                    },
+                    fontFamily: { sans: ['Outfit', 'sans-serif'], mono: ['IBM Plex Mono', 'monospace'] },
                     colors: { 'arch-blue': '#0057FF' }
                 }
             }
@@ -23,10 +20,41 @@
         body { background-color: #ffffff; color: #111111; }
         .blueprint-border { border: 2px solid #111111; }
         .section-line { border-top: 1px solid #e5e7eb; }
-        .image-placeholder { background-color: #f9fafb; border: 1px solid #d1d5db; width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-        .fig-tag { position: absolute; bottom: 0; right: 0; background: #111; color: #fff; padding: 4px 10px; font-family: 'IBM Plex Mono'; font-size: 10px; text-transform: uppercase; z-index: 10; }
-        img { width: 100%; height: 100%; object-cover: cover; }
-        video { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Standardized Media Boxes: All 16:9 for Consistency */
+        .standard-media { 
+            background-color: #f3f4f6; 
+            border: 1px solid #d1d5db; 
+            width: 100%; 
+            aspect-ratio: 16 / 9; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        
+        /* Using 'contain' so your screenshots (like Fig 1.1) never crop out edges */
+        .standard-media img, .standard-media video { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; 
+        }
+
+        .fig-tag { 
+            position: absolute; 
+            bottom: 0; 
+            right: 0; 
+            background: #111; 
+            color: #fff; 
+            padding: 4px 10px; 
+            font-family: 'IBM Plex Mono'; 
+            font-size: 10px; 
+            text-transform: uppercase; 
+            z-index: 20; 
+        }
+        
+        .workflow-step { border-left: 2px solid #0057FF; padding-left: 1rem; }
     </style>
 </head>
 <body class="antialiased p-4 md:p-12">
@@ -35,7 +63,7 @@
         <div class="flex-1 pr-8">
             <p class="text-arch-blue font-mono text-xs font-bold tracking-[0.4em] uppercase mb-2">Technical Analysis .01</p>
             <h1 class="text-4xl md:text-6xl font-light tracking-tighter">Floorplancreator.net</h1>
-            <p class="text-gray-500 mt-4 italic font-light">Integration Analysis: Grade 11 Technological Design (TDJ3M)</p>
+            <p class="text-gray-500 mt-4 italic font-light">TDJ3M Grade 11 Technological Design</p>
         </div>
         
         <div class="w-full md:w-80 border-t-2 md:border-t-0 md:border-l-2 border-black pt-6 md:pt-0 md:pl-8 flex flex-col justify-between">
@@ -44,126 +72,88 @@
                 <p class="text-2xl font-bold uppercase tracking-tight">Brandon Smart</p>
             </div>
             <div class="mt-6">
-                <p class="text-[10px] font-mono uppercase text-gray-400 mb-1">Curriculum Context</p>
-                <p class="text-sm font-medium leading-tight">B1. Technical Concepts <br>& A1. Development</p>
+                <p class="text-[10px] font-mono uppercase text-gray-400 mb-1">Curriculum Alignment</p>
+                <p class="text-sm font-medium leading-tight">B1. Tech Concepts<br>& A1. Development</p>
             </div>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto space-y-20">
-
+    <main class="max-w-6xl mx-auto space-y-24">
+        
         <section>
-            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-8 border-b border-black pb-2">00 / Video Walkthrough</h2>
-            <div class="image-placeholder aspect-video bg-black">
-                <video controls>
-                    <source src="video.mp4" type="video/mp4">
-                </video>
-                <div class="fig-tag bg-arch-blue">Demo Recording</div>
+            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-6 border-b border-black pb-2">00 / Functionality Demo</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="standard-media bg-black">
+                    <video controls>
+                        <source src="video.mp4" type="video/mp4">
+                    </video>
+                    <div class="fig-tag bg-arch-blue">Walkthrough</div>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-light italic">Comprehensive System Overview</h3>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        This demo verifies the software's nuanced drafting capabilities. By transitioning between 2D technical drawings and 3D ergonomic walkthroughs, students engage in sophisticated spatial analysis and rapid solution development.
+                    </p>
+                </div>
             </div>
         </section>
-        
+
         <section class="section-line pt-20">
-            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-8 border-b border-black pb-2">01 / Technical Workflow & Usability</h2>
+            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-12">01 / Technical Workflow</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div class="space-y-8">
-                    <p class="text-gray-700 leading-relaxed">
-                        Floorplancreator.net functions as a lightweight architectural suite. To satisfy <strong>Overall Expectation B1</strong> regarding technical concepts, the tool utilizes a specific three-step workflow:
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <span class="font-mono text-arch-blue font-bold">01.</span>
-                            <div>
-                                <h4 class="font-bold uppercase text-xs tracking-wider mb-1">The Smart-Snap System</h4>
-                                <p class="text-sm text-gray-600">Users drag walls, windows, and doors onto the canvas. The software automatically heals joints and aligns elements to maintain structural accuracy.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <span class="font-mono text-arch-blue font-bold">02.</span>
-                            <div>
-                                <h4 class="font-bold uppercase text-xs tracking-wider mb-1">Input Rigor</h4>
-                                <p class="text-sm text-gray-600">Unlike simple sketch apps, this tool allows for exact metric or imperial dimension inputs to create scalable technical drawings.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <span class="font-mono text-arch-blue font-bold">03.</span>
-                            <div>
-                                <h4 class="font-bold uppercase text-xs tracking-wider mb-1">Symbol Literacy</h4>
-                                <p class="text-sm text-gray-600">Students must utilize standard architectural symbols, such as door swings and electrical icons, for professional model verification.</p>
-                            </div>
-                        </div>
+                    <div class="workflow-step">
+                        <h4 class="font-bold uppercase text-xs tracking-wider mb-2">The Smart-Snap System</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">Automatic joint healing and element alignment ensure structural accuracy during the drafting phase.</p>
+                    </div>
+                    <div class="workflow-step">
+                        <h4 class="font-bold uppercase text-xs tracking-wider mb-2">Input Rigor</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">Support for exact metric dimensioning moves students away from sketching and toward professional technical modeling.</p>
                     </div>
                 </div>
-
-                <div class="image-placeholder">
-                    <img src="image1.png" alt="Software Interface">
+                <div class="standard-media">
+                    <img src="image1.png" alt="Interface">
                     <div class="fig-tag">Fig 1.1 / Interface</div>
                 </div>
             </div>
         </section>
 
         <section class="section-line pt-20">
-            <div class="flex flex-col md:flex-row gap-12 items-center mb-10">
-                <div class="md:w-1/2 order-2 md:order-1">
-                    <div class="image-placeholder">
+            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-12">02 / Contextual Application</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="space-y-3">
+                    <div class="standard-media">
                         <img src="image2.png" alt="3D Mode">
-                        <div class="fig-tag">Fig 2.1 / 3D Mode</div>
+                        <div class="fig-tag">3D Feedback</div>
                     </div>
+                    <p class="text-[10px] font-bold uppercase text-gray-400">Fig 2.1 / Verification</p>
                 </div>
-                <div class="md:w-1/2 order-1 md:order-2">
-                    <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-4">02 / Feedback Engine</h2>
-                    <h3 class="text-3xl font-light mb-4">Instant 3D Visualization</h3>
-                    <p class="text-gray-700 leading-relaxed mb-6">
-                        The "Killer Feature" is the one-click 2D-to-3D transformation. This allows for instant ergonomic verification and sightline analysis. By removing the creation fatigue of manual drafting, students focus on <strong>Expectation A1</strong>: evaluating solutions through rapid prototyping.
-                    </p>
+                <div class="space-y-3">
+                    <div class="standard-media">
+                        <img src="image3.png" alt="Tiny Home">
+                        <div class="fig-tag">Math Scaffolding</div>
+                    </div>
+                    <p class="text-[10px] font-bold uppercase text-gray-400">Fig 3.1 / Area Calc</p>
                 </div>
-            </div>
-        </section>
-
-        <section class="section-line pt-20">
-            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-12">03 / Implementation Scenarios</h2>
-            
-            <div class="space-y-24">
-                <div class="space-y-4">
-                    <div class="flex justify-between border-b border-gray-100 pb-2">
-                        <h4 class="font-bold uppercase text-sm">Scenario A: Tiny Home Challenge</h4>
-                        <span class="font-mono text-[10px] text-gray-400 uppercase">Math Integration</span>
+                <div class="space-y-3">
+                    <div class="standard-media">
+                        <img src="image4.png" alt="AODA">
+                        <div class="fig-tag">AODA Standards</div>
                     </div>
-                    <div class="image-placeholder !aspect-[21/9]">
-                        <img src="image3.png" alt="Math Scaffolding">
-                        <div class="fig-tag">Fig 3.1 / Area Calc</div>
-                    </div>
-                    <p class="text-sm text-gray-600">Students stay under 37m² via <strong>Live Area Calculation</strong>, which updates square footage in real-time as walls move.</p>
+                    <p class="text-[10px] font-bold uppercase text-gray-400">Fig 3.2 / Compliance</p>
                 </div>
-
-                <div class="space-y-4">
-                    <div class="flex justify-between border-b border-gray-100 pb-2">
-                        <h4 class="font-bold uppercase text-sm">Scenario B: Accessibility Retrofit</h4>
-                        <span class="font-mono text-[10px] text-gray-400 uppercase">AODA Standards</span>
+                <div class="space-y-3">
+                    <div class="standard-media">
+                        <img src="image5.png" alt="BIM">
+                        <div class="fig-tag">BIM Workflow</div>
                     </div>
-                    <div class="image-placeholder !aspect-[21/9]">
-                        <img src="image4.png" alt="AODA Compliance">
-                        <div class="fig-tag">Fig 3.2 / Compliance</div>
-                    </div>
-                    <p class="text-sm text-gray-600">Verification of wheelchair turning radii compliance (1500mm) in renovation projects traced from JPEGs.</p>
-                </div>
-
-                <div class="space-y-4">
-                    <div class="flex justify-between border-b border-gray-100 pb-2">
-                        <h4 class="font-bold uppercase text-sm">Scenario C: Collaborative BIM</h4>
-                        <span class="font-mono text-[10px] text-gray-400 uppercase">Industry Workflow</span>
-                    </div>
-                    <div class="image-placeholder !aspect-[21/9]">
-                        <img src="image5.png" alt="BIM Collaboration">
-                        <div class="fig-tag">Fig 3.3 / Multi-User</div>
-                    </div>
-                    <p class="text-sm text-gray-600">Mimicking <strong>Building Information Modeling (BIM)</strong> through cloud-based multi-user file sharing.</p>
+                    <p class="text-[10px] font-bold uppercase text-gray-400">Fig 3.3 / Collaboration</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="max-w-6xl mx-auto mt-24 py-12 border-t-2 border-black flex justify-between items-center text-[10px] font-mono text-gray-400 uppercase tracking-widest bg-white">
+    <footer class="max-w-6xl mx-auto mt-32 py-12 border-t-2 border-black flex justify-between items-center text-[10px] font-mono text-gray-400 uppercase tracking-widest">
         <p>Brandon Smart Portfolio</p>
         <p>TDJ3M - 2026</p>
     </footer>
