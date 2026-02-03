@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TDJ3M Portfolio | Brandon Smart</title>
+    <title>TDJ3M Digital Tool Portfolio | Brandon Smart</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -15,119 +15,104 @@
                         sans: ['Outfit', 'sans-serif'], 
                         mono: ['IBM Plex Mono', 'monospace'] 
                     },
-                    colors: { 
-                        'studio-blue': '#0057FF',
-                        'studio-border': '#EEEEEE'
-                    }
+                    colors: { 'arch-blue': '#0057FF', 'arch-line': '#E5E7EB' }
                 }
             }
         }
     </script>
     <style>
         body { background-color: #FFFFFF; color: #111111; }
-        .grid-line { border: 1px solid #EEEEEE; }
-        .blueprint-dot {
-            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
-            background-size: 20px 20px;
+        .border-fine { border: 1px solid #E5E7EB; }
+        .blueprint-bg {
+            background-image: radial-gradient(#d1d5db 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
         }
+        section { border-bottom: 1px solid #E5E7EB; }
     </style>
 </head>
-<body class="antialiased font-sans">
+<body class="antialiased">
 
-    <nav class="border-b grid-line py-8">
-        <div class="max-w-6xl mx-auto px-6 flex justify-between items-baseline">
+    <header class="max-w-6xl mx-auto mt-12 px-6 pb-12 border-b border-fine">
+        <div class="flex flex-col md:flex-row justify-between items-end gap-6">
             <div>
-                <h1 class="text-xs font-mono font-bold tracking-[0.3em] uppercase text-studio-blue">Digital Tool Portfolio</h1>
-                <p class="text-2xl font-semibold mt-1">Floorplancreator.net Integration</p>
-                <p class="text-sm text-gray-500 mt-2">Prepared by: <span class="text-black font-medium underline">Brandon Smart</span></p>
+                <p class="text-arch-blue font-mono text-xs font-bold tracking-widest uppercase mb-2">Individual Component</p>
+                <h1 class="text-5xl font-light tracking-tight">Floorplancreator.net</h1>
+                <p class="text-sm text-gray-500 mt-2 font-mono uppercase">Course Code: TDJ3M (Ontario Curriculum)</p>
             </div>
-            <div class="text-right hidden md:block">
-                <p class="text-xs font-mono uppercase text-gray-400">Course Code: TDJ3M</p>
-                <p class="text-xs font-mono uppercase text-gray-400">Ontario Curriculum</p>
+            <div class="text-right border-l border-fine pl-6">
+                <p class="text-xs font-mono uppercase text-gray-400">Student</p>
+                <p class="text-lg font-medium underline decoration-arch-blue decoration-2 underline-offset-4">Brandon Smart</p>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <main class="max-w-6xl mx-auto border-x grid-line">
+    <main class="max-w-6xl mx-auto px-6 py-12">
         
-        <section class="grid grid-cols-1 md:grid-cols-2 border-b grid-line">
-            <div class="p-12 border-r grid-line flex flex-col justify-center">
-                <span class="text-xs font-mono text-studio-blue mb-4">01 / OVERVIEW</span>
-                <h2 class="text-4xl font-light mb-6 leading-tight">A lightweight CAD engine for the <span class="italic">modern classroom.</span></h2>
-                <p class="text-gray-600 leading-relaxed">
-                    Floorplancreator.net bridges the gap between manual sketching and heavy industrial software. It functions as a feedback engine, allowing students to focus on design logic rather than software complexity.
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-16 py-16">
+            <div>
+                <span class="text-xs font-mono text-gray-400">01 / TOOL FUNCTIONALITY</span>
+                <h2 class="text-3xl font-light mt-4 mb-6">Usability and Precision</h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Floorplancreator.net is a cloud-based CAD suite that bridges the gap between hand-sketching and heavy industrial software. The <strong>Smart-Snap</strong> system (Fig 1.1) heals wall joints automatically, while <strong>Instant 3D</strong> (Fig 1.2) allows for immediate ergonomic verification.
                 </p>
-            </div>
-            <div class="blueprint-dot p-12 flex items-center justify-center">
-                <div class="bg-white border p-6 w-full shadow-sm">
-                    <h3 class="font-mono text-xs font-bold mb-4 uppercase">Feature: Smart-Snap Interface</h3>
-                    <div class="aspect-video bg-gray-100 mb-4 flex items-center justify-center text-gray-400 text-xs p-4 text-center">
-                        [IMAGE: A close-up screenshot of two walls meeting or a window being placed in the software]
+                
+                <div class="border-fine p-2 bg-gray-50">
+                    <div class="bg-white border-fine h-32 flex items-center justify-center text-[10px] text-gray-400 uppercase p-4 text-center">
+                        [IMAGE 1: Zoomed-in screenshot of the software's TOOLBAR icons]
                     </div>
-                    <p class="text-xs text-gray-500">Automated wall joints and exact dimension inputs ensure professional-grade scalability.</p>
+                    <p class="text-[9px] font-mono mt-2 text-center uppercase">Fig 1.1 — Interaction Nodes</p>
+                </div>
+            </div>
+
+            <div class="blueprint-bg p-4 flex flex-col justify-center">
+                <div class="bg-white border-fine p-6 shadow-sm">
+                    <div class="aspect-video bg-gray-100 flex items-center justify-center text-[10px] text-gray-400 p-8 text-center">
+                        [IMAGE 2: 3D Walkthrough View - Interior Perspective]
+                    </div>
+                    <p class="text-[9px] font-mono mt-4 text-center uppercase">Fig 1.2 — 3D Spatial Verification</p>
                 </div>
             </div>
         </section>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 border-b grid-line">
-            <div class="p-12 border-r grid-line order-2 md:order-1">
-                <div class="bg-white border p-6 w-full shadow-sm">
-                    <h3 class="font-mono text-xs font-bold mb-4 uppercase">Feature: Instant 3D Visualization</h3>
-                    <div class="aspect-video bg-gray-100 mb-4 flex items-center justify-center text-gray-400 text-xs p-4 text-center">
-                        [IMAGE: A screenshot of your design in 3D mode]
-                    </div>
-                    <p class="text-xs text-gray-500">One-click 2D-to-3D transformation to immediately verify ergonomics and sightlines.</p>
-                </div>
-            </div>
-            <div class="p-12 flex flex-col justify-center order-1 md:order-2">
-                <span class="text-xs font-mono text-studio-blue mb-4">02 / RATIONALE</span>
-                <h2 class="text-3xl font-light mb-6 leading-tight">Eliminating <span class="italic">Creation Fatigue.</span></h2>
-                <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                    Traditional drafting penalizes mistakes. This tool supports <strong>A1 (Ontario Curriculum)</strong> by encouraging rapid prototyping. Students can iterate 3x faster than hand-drawing.
+        <section class="py-16 grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-4">
+                <span class="text-xs font-mono text-gray-400">02 / RATIONALE</span>
+                <h2 class="text-3xl font-light mt-4 mb-6">Cognitive Shift</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    By removing the mechanical friction of drafting, students focus on solving design problems rather than drawing lines. This aligns with <strong>Curriculum Expectation A1</strong> for rapid prototyping.
                 </p>
-                <div class="p-4 border-l-2 border-studio-blue bg-gray-50 text-xs font-mono">
-                    Expectation B1: Mastering technical concepts and standard architectural symbols.
-                </div>
             </div>
-        </section>
-
-        <section class="p-12 border-b grid-line">
-            <span class="text-xs font-mono text-studio-blue mb-8 block">03 / CLASSROOM SCENARIOS</span>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div>
-                    <h4 class="font-bold text-lg mb-2">Tiny Home Challenge</h4>
-                    <p class="text-xs text-gray-400 font-mono mb-4 uppercase tracking-tighter">Math Integration</p>
-                    <div class="aspect-square bg-gray-50 border grid-line mb-4 flex items-center justify-center text-gray-400 text-[10px] p-6 text-center">
-                        [IMAGE: Screenshot showing the square footage number changing as you drag a wall]
+            <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="border-fine p-4">
+                    <h3 class="text-xs font-bold uppercase mb-4">Tiny Home (Math)</h3>
+                    <div class="h-32 bg-gray-50 border-fine mb-3 flex items-center justify-center text-[9px] text-gray-400 p-2 text-center">
+                        [IMAGE 3: 2D Floor Plan with AREA LABELS visible]
                     </div>
-                    <p class="text-sm text-gray-600">The <strong>Live Area Calculation</strong> allows students to manage spatial budgets (under 37m²) in real-time.</p>
+                    <p class="text-[10px] text-gray-500">Managing spatial budgets under 37m² via Live Area data.</p>
                 </div>
 
-                <div>
-                    <h4 class="font-bold text-lg mb-2">Accessibility Retrofit</h4>
-                    <p class="text-xs text-gray-400 font-mono mb-4 uppercase tracking-tighter">AODA Standards</p>
-                    <div class="aspect-square bg-gray-50 border grid-line mb-4 flex items-center justify-center text-gray-400 text-[10px] p-6 text-center">
-                        [IMAGE: Screenshot of a 1500mm measurement line across a bathroom floor]
+                <div class="border-fine p-4">
+                    <h3 class="text-xs font-bold uppercase mb-4">Accessibility (AODA)</h3>
+                    <div class="h-32 bg-gray-50 border-fine mb-3 flex items-center justify-center text-[9px] text-gray-400 p-2 text-center">
+                        [IMAGE 4: 2D Plan showing 1500mm MEASUREMENT LINES]
                     </div>
-                    <p class="text-sm text-gray-600">Students trace JPEG layouts and renovate them to meet the 1500mm wheelchair turning radius requirement.</p>
+                    <p class="text-[10px] text-gray-500">Tracing JPEGs to verify wheelchair turning radii compliance.</p>
                 </div>
 
-                <div>
-                    <h4 class="font-bold text-lg mb-2">Collaborative BIM</h4>
-                    <p class="text-xs text-gray-400 font-mono mb-4 uppercase tracking-tighter">Industry Workflow</p>
-                    <div class="aspect-square bg-gray-50 border grid-line mb-4 flex items-center justify-center text-gray-400 text-[10px] p-6 text-center">
-                        [IMAGE: Screenshot of the "Project Sharing" menu or collaboration icons]
+                <div class="border-fine p-4">
+                    <h3 class="text-xs font-bold uppercase mb-4">BIM (Workflows)</h3>
+                    <div class="h-32 bg-gray-50 border-fine mb-3 flex items-center justify-center text-[9px] text-gray-400 p-2 text-center">
+                        [IMAGE 5: Screenshot of 'SHARE' menu or PROJECT LIST]
                     </div>
-                    <p class="text-sm text-gray-600">Mimics industry BIM by allowing groups to work on a single master file simultaneously.</p>
+                    <p class="text-[10px] text-gray-500">Cloud-based project sharing for group zone optimization.</p>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="py-12 text-center">
-        <p class="text-[10px] font-mono text-gray-400 uppercase tracking-widest">Technological Design TDJ3M Portfolio Section &copy; 2026</p>
+        <p class="text-[10px] font-mono text-gray-400 uppercase tracking-widest">Brandon Smart // Portfolio .01 // 2026</p>
     </footer>
 
 </body>
