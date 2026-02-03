@@ -28,9 +28,6 @@
         .section-line { border-top: 1px solid #e5e7eb; }
         
         /* --- MEDIA SIZING RULES --- */
-        
-        /* 1. SCREENSHOTS (Auto-Height) */
-        /* Hugs your image tightly. */
         .media-container { 
             width: 100%; 
             position: relative; 
@@ -46,8 +43,6 @@
             display: block;
         }
 
-        /* 2. VIDEO (Fixed 16:9) */
-        /* Forces 16:9 ratio for the player */
         .video-wrapper {
             width: 100%;
             aspect-ratio: 16 / 9;
@@ -59,16 +54,14 @@
             object-fit: cover;
         }
 
-        /* 3. MISSING IMAGE SAFETY */
-        /* Keeps layout open while you take screenshots */
+        /* Safety for missing images */
         .placeholder-safe {
             min-height: 300px;
             object-fit: cover;
             width: 100%;
         }
 
-        /* ---------------------------- */
-
+        /* --- TEXT STYLING --- */
         .fig-tag { 
             position: absolute; 
             bottom: 0; 
@@ -86,13 +79,20 @@
         
         .category-header {
             font-family: 'IBM Plex Mono';
-            font-size: 10px;
+            font-size: 11px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #0057FF;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             display: block;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 0.95rem; /* Slightly larger for readability */
+            line-height: 1.7;
         }
     </style>
 </head>
@@ -120,38 +120,59 @@
     <main class="max-w-5xl mx-auto space-y-32">
         
         <section>
-            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-8 border-b border-black pb-2">00 / Video Demonstration</h2>
+            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-8 border-b border-black pb-2">00 / Operational Workflow</h2>
             
-            <div class="media-container">
+            <div class="media-container shadow-xl">
                 <div class="video-wrapper">
                     <video controls>
                         <source src="video.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <div class="fig-tag">Live Usage Demo</div>
+                <div class="fig-tag">Video: End-to-End Workflow</div>
+            </div>
+            
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div>
+                    <span class="category-header">Phase 1: Rapid Prototyping</span>
+                    <p class="text-gray-600">
+                        The video begins by demonstrating the <strong>drag-and-drop library system</strong>. Students select standardized architectural components (walls, doors, stairs) and place them on the canvas. This phase prioritizes "Layout Logic" over fine detail, allowing students to quickly iterate on room flow and connectivity before committing to exact measurements.
+                    </p>
+                </div>
+                <div>
+                    <span class="category-header">Phase 2: Parametric Input</span>
+                    <p class="text-gray-600">
+                        At the 0:15 mark, the workflow shifts to precision. I demonstrate the <strong>dimensioning engine</strong>, where clicking any wall reveals a numerical input field. By typing "3500mm," the software physically resizes the geometry. This enforces the TDJ3M requirement for metric accuracy and engineering scale.
+                    </p>
+                </div>
+                <div>
+                    <span class="category-header">Phase 3: Spatial Verification</span>
+                    <p class="text-gray-600">
+                        The final segment demonstrates the transition from abstract 2D plans to a concrete <strong>3D rendering</strong>. This feature is critical for "Solution Testing" (Expectation A1), as it allows the student to verify sightlines, verticality, and spatial volume that might be misunderstood in a flat 2D drawing.
+                    </p>
+                </div>
             </div>
         </section>
 
         <section class="section-line pt-20">
-            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-10">01 / The Interface</h2>
+            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-10">01 / The Interface & Standards</h2>
             
             <div class="media-container">
                 <img class="placeholder-safe" src="image1.png" alt="Software Interface with Room">
-                <div class="fig-tag">Fig 1.1 / Main Workspace</div>
+                <div class="fig-tag">Fig 1.1 / Drafting Workspace</div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-10">
                 <div>
-                    <span class="category-header">Feature A: Smart Snapping</span>
-                    <p class="text-gray-600 leading-relaxed text-sm">
-                        As shown in Fig 1.1, the interface features an intelligent snapping engine. When a student drags a room shape (like the Square Room shown) onto the canvas, the software automatically aligns it to the grid, removing the frustration of manual drawing.
+                    <span class="category-header">Mechanism: Constraint-Based Snapping</span>
+                    <p class="text-gray-600 leading-relaxed">
+                        As illustrated in Fig 1.1, the software utilizes a "Smart Snap" engine. When a student drags the Square Room component (seen on screen) near another element, the software automatically aligns the vectors to 90° or 45° angles. This mimics the <strong>"Object Snap" (OSNAP)</strong> features found in industry-standard tools like AutoCAD and Revit, ensuring that students produce clean, water-tight geometry rather than messy sketches.
                     </p>
                 </div>
                 <div>
-                    <span class="category-header">Feature B: Metric Rigor</span>
-                    <p class="text-gray-600 leading-relaxed text-sm">
-                        The tool satisfies <strong>Expectation B1</strong> by requiring precise data entry. In the screenshot, clicking the wall reveals the dimension input. Students must type exact metric values (e.g., 4000mm) rather than sketching by eye.
+                    <span class="category-header">Standard: Metric Precision</span>
+                    <p class="text-gray-600 leading-relaxed">
+                        The interface is designed to prevent "eyeballing." As shown by the dimension line in the screenshot (e.g., 4000mm), every wall has a defined numerical value. This fulfills <strong>Curriculum Expectation B1</strong>, which requires students to "create technical drawings using standard conventions." The student is forced to think in specific millimeters, developing a sense of architectural scale.
                     </p>
                 </div>
             </div>
@@ -162,62 +183,77 @@
             
             <div class="media-container">
                 <img class="placeholder-safe" src="image2.png" alt="3D Visualization">
-                <div class="fig-tag">Fig 2.1 / 3D Verification</div>
+                <div class="fig-tag">Fig 2.1 / 3D Walkthrough Mode</div>
             </div>
 
-            <div class="mt-8">
-                <span class="category-header">Verification Loop</span>
-                <p class="text-gray-700 leading-relaxed max-w-3xl">
-                    The software allows instant toggling between the 2D plan and this 3D view (Fig 2.1). This creates a feedback loop where students can immediately test the "livability" of their design, satisfying <strong>Expectation A1</strong> (Solution Testing).
+            <div class="mt-10">
+                <span class="category-header">Pedagogical Value: Ergonomic Verification</span>
+                <p class="text-gray-700 leading-relaxed max-w-4xl">
+                    Novice designers often struggle to translate 2D lines into 3D space. Fig 2.1 demonstrates the tool's solution: an instant 3D rendering engine. By toggling this view, students can perform <strong>Ergonomic Checks</strong>. They can verify if a window is too high, if a hallway feels claustrophobic, or if furniture blocks a path of travel. This immediate visual feedback creates a "Design-Test-Refine" loop, which is the core of the Technological Design process (Expectation A1).
                 </p>
             </div>
         </section>
 
         <section class="section-line pt-20 pb-20">
-            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-16">03 / Proof of Learning</h2>
+            <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-arch-blue mb-16">03 / Implementation & Assessment</h2>
             
-            <div class="space-y-20">
+            <div class="space-y-24">
                 
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <h4 class="font-bold uppercase text-lg">Scenario A: Math & Area</h4>
-                        <span class="text-[10px] font-mono bg-arch-blue text-white px-2 py-1">Tiny Home Unit</span>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="md:col-span-2">
+                        <div class="media-container">
+                            <img class="placeholder-safe" src="image3.png" alt="Area Calculation Evidence">
+                            <div class="fig-tag">Fig 3.1 / Automated Data</div>
+                        </div>
                     </div>
-                    <div class="media-container">
-                        <img class="placeholder-safe" src="image3.png" alt="Area Calculation Evidence">
-                        <div class="fig-tag">Fig 3.1 / Area Data</div>
+                    <div>
+                        <div class="border-b border-black pb-2 mb-4">
+                            <h4 class="font-bold uppercase text-lg">Scenario A: Mathematical Constraints</h4>
+                            <span class="text-[10px] font-mono bg-arch-blue text-white px-2 py-1">Numeracy Integration</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            <strong>The Evidence:</strong> Fig 3.1 highlights the "Live Area" text inside the room (e.g., 16.0 m²).<br><br>
+                            <strong>The Learning:</strong> In the "Tiny Home" unit, students are restricted to a 37m² footprint. This feature provides mathematical scaffolding. As they move a wall, the number changes instantly. This forces a negotiation between aesthetic desires ("I want a huge living room") and numerical reality ("I only have 5m² left"), teaching resource management and adherence to project briefs.
+                        </p>
                     </div>
-                    <p class="text-gray-600 text-sm mt-4">
-                        <strong>Evidence:</strong> The screenshot captures the "Live Area" text inside the room. Students must keep the design under 37m², using this real-time data to make critical layout decisions.
-                    </p>
                 </div>
 
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <h4 class="font-bold uppercase text-lg">Scenario B: Accessibility (AODA)</h4>
-                        <span class="text-[10px] font-mono bg-black text-white px-2 py-1">Code Compliance</span>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="md:col-span-2">
+                        <div class="media-container">
+                            <img class="placeholder-safe" src="image4.png" alt="AODA Evidence">
+                            <div class="fig-tag">Fig 3.2 / Code Compliance Check</div>
+                        </div>
                     </div>
-                    <div class="media-container">
-                        <img class="placeholder-safe" src="image4.png" alt="AODA Evidence">
-                        <div class="fig-tag">Fig 3.2 / Turning Radius</div>
+                    <div>
+                        <div class="border-b border-black pb-2 mb-4">
+                            <h4 class="font-bold uppercase text-lg">Scenario B: Accessibility Standards (AODA)</h4>
+                            <span class="text-[10px] font-mono bg-black text-white px-2 py-1">Regulatory Law</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            <strong>The Evidence:</strong> The screenshot shows a circle with a 1500mm diameter overlaid on a floor plan.<br><br>
+                            <strong>The Learning:</strong> This demonstrates compliance with the <strong>Accessibility for Ontarians with Disabilities Act (AODA)</strong>, which mandates a 1500mm turning radius for wheelchairs. By utilizing the geometry tools to verify this clearance, students move beyond "drawing rooms" to "designing for inclusivity," meeting the expectation to apply standards/legislation to technical design.
+                        </p>
                     </div>
-                    <p class="text-gray-600 text-sm mt-4">
-                        <strong>Evidence:</strong> The image shows a 1500mm circle overlay. This visual check proves compliance with Ontario AODA standards for wheelchair accessibility (turning radius).
-                    </p>
                 </div>
 
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <h4 class="font-bold uppercase text-lg">Scenario C: Collaboration</h4>
-                        <span class="text-[10px] font-mono bg-gray-500 text-white px-2 py-1">BIM Intro</span>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="md:col-span-2">
+                        <div class="media-container">
+                            <img class="placeholder-safe" src="image5.png" alt="Sharing Evidence">
+                            <div class="fig-tag">Fig 3.3 / Cloud Collaboration</div>
+                        </div>
                     </div>
-                    <div class="media-container">
-                        <img class="placeholder-safe" src="image5.png" alt="Sharing Evidence">
-                        <div class="fig-tag">Fig 3.3 / Project Sharing</div>
+                    <div>
+                        <div class="border-b border-black pb-2 mb-4">
+                            <h4 class="font-bold uppercase text-lg">Scenario C: Industry Workflow (BIM)</h4>
+                            <span class="text-[10px] font-mono bg-gray-500 text-white px-2 py-1">Preparation for Work</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            <strong>The Evidence:</strong> Fig 3.3 captures the cloud-sharing menu, generating a unique URL for the project.<br><br>
+                            <strong>The Learning:</strong> Modern architecture relies on <strong>Building Information Modeling (BIM)</strong>, where files are live and shared among engineers, architects, and clients. This feature mimics that workflow. Students submit a URL rather than a printed paper, allowing the teacher (the client) to inspect the digital model remotely, reinforcing digital literacy and professional communication methods.
+                        </p>
                     </div>
-                    <p class="text-gray-600 text-sm mt-4">
-                        <strong>Evidence:</strong> This shows the cloud-sharing menu. Students generate a link to share their "living model" with peers, mimicking industry BIM workflows.
-                    </p>
                 </div>
 
             </div>
